@@ -4,14 +4,26 @@ In order to be as flexible as possible in the future, we opted for a microservic
 spring-boot netflix framework eureka server\\
 Microservices should provide unified access to the external projects.\\
 component diagram?\\
+REST zu alle eigentlich\\
+restricted to natural language\\
+
+\subsection{Repository}
 Repo-ms simple interface to the Hadoop system\\
+
+\subsection{Database}
 RDF Database - Apache Jena DB on Fuseki\\
 REST zu FOX\\
-REST zu alle eigentlich\\
+
+\subsection{Executer}
 Executer, simple workflows, complex workflows\\
-restricted to natural language\\
+
+\subsection{User interface}
 on the UI, we rely on popular technologies such as JQuery and Bootstrap\\
 JQuery plugins where possible\\
 Commons library\\
-Logging\\
+
+\subsection{Logging}
+To implement a centralized logging solution we setup the ELK stack. Consist of Elasticsearch, Logstash, and Kibana. All three are delivered in preconfigured docker containers. Elasticsearch is a search engine. Logstash is a server‑side pipeline that collects the log data from the sources and sends it to Elasticsearch. Kibana visualize the data from Elasticsearch. Each microservices writes its log into a special directory, from which Logstash retrieves the logs. This was the main task of Suganya and Sepide this semester and I supported them in the configuration of the docker containers and the implementation of the changes in the microservices.
+
+\subsection{Continuous deployment}
 Docker, deployment. spring-boot default docker builder\\
