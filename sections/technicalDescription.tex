@@ -11,19 +11,23 @@ restricted to natural language\\
 Repo-ms simple interface to the Hadoop system\\
 
 \subsection{Database}
-RDF Database - Apache Jena DB on Fuseki\\
-REST zu FOX\\
+The second persistent layer, next to Hadoop, is a Fuseki server. Apache Jena Fuseki is a SPARQL server, in our case its setup in a docker container. It uses a TDB and provides a REST interface for updating and query the database. This was the main task of Suganya and Sepide in the first semester. They implemented the database microservice as a facade. The provide a simplified access to the database and ensure that other systems are informed about changes centrally. I support the two in programming the microservice.
 
 \subsection{Executer}
 Executer, simple workflows, complex workflows\\
+
+\subsection{Extractors}
+REST zu FOX\\
 
 \subsection{User interface}
 on the UI, we rely on popular technologies such as JQuery and Bootstrap\\
 JQuery plugins where possible\\
 Commons library\\
+chat integration\\
+data vizialization\\
 
 \subsection{Logging}
-To implement a centralized logging solution we setup the ELK stack. Consist of Elasticsearch, Logstash, and Kibana. All three are delivered in preconfigured docker containers. Elasticsearch is a search engine. Logstash is a server‑side pipeline that collects the log data from the sources and sends it to Elasticsearch. Kibana visualize the data from Elasticsearch. Each microservices writes its log into a special directory, from which Logstash retrieves the logs. This was the main task of Suganya and Sepide this semester and I supported them in the configuration of the docker containers and the implementation of the changes in the microservices.
+To implement a centralized logging solution we setup the ELK stack. Consist of Elasticsearch, Logstash, and Kibana. All three are delivered in preconfigured docker containers. Elasticsearch is a search engine. Logstash is a server‑side pipeline that collects the log data from the sources and sends it to Elasticsearch. Kibana visualize the data from Elasticsearch. Each microservices writes its log into a special directory, from which Logstash retrieves the logs. This was the main task of Suganya and Sepide in the second semester and I supported them in the configuration of the docker containers and the implementation of the changes in the microservices.
 
 \subsection{Continuous deployment}
 Docker, deployment. spring-boot default docker builder\\
