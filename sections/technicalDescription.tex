@@ -6,8 +6,11 @@ Microservices should provide unified access to the external projects.\\
 component diagram?\\
 REST zu alle eigentlich\\
 restricted to natural language\\
+Commons library\\
 
 \subsection{Repository}
+As first persistent layer we use the open source project Hadoop. Hadoop is software for storing data in a cluster of distributed systems. In our case, we only use one server, but with this solution we offer an easy-to-scale system for the future. The Hadoop API did not support Java9 at the time, so we had to implement the access the Hadoop interfaces by ourselves. This was the main task of André, I supported him to configure hadoop at initial.
+docker \\
 Repo-ms simple interface to the Hadoop system\\
 
 \subsection{Database}
@@ -22,7 +25,6 @@ REST zu FOX\\
 \subsection{User interface}
 on the UI, we rely on popular technologies such as JQuery and Bootstrap\\
 JQuery plugins where possible\\
-Commons library\\
 chat integration\\
 data vizialization\\
 
