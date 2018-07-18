@@ -1,35 +1,22 @@
-(1-2 page)\\
-In order to be as flexible as possible in the future, we opted for a microservice architecture. 
-
-spring-boot netflix framework eureka server\\
-Microservices should provide unified access to the external projects.\\
-component diagram?\\
-REST zu alle eigentlich\\
-restricted to natural language\\
-Commons library\\
+In order to be as flexible as possible in the future, we opted for a microservice architecture. We used the Spring Boot framework with the Netflix Eureka-Registry-Server. With these microservices we also wanted to create a unified access to external system. And during the project, we also introduced the SASK commons as a subproject, for classes that are used across the microservices. 
 
 \subsection{Repository}
-As first persistent layer we use the open source project Hadoop. Hadoop is software for storing data in a cluster of distributed systems. In our case, we only use one server, but with this solution we offer an easy-to-scale system for the future. The Hadoop API did not support Java9 at the time, so we had to implement the access the Hadoop interfaces by ourselves. This was the main task of André, I supported him to configure hadoop at initial.
-docker \\
-Repo-ms simple interface to the Hadoop system\\
+As first persistent component we use the open source project Hadoop. Hadoop is software for storing data in a cluster of distributed systems. In our case, we only use one server, but with this solution we offer an easy-to-scale system for the future. The Hadoop API did not support Java9 at the time, so we had to implement the access the Hadoop interfaces by ourselves. This was the main task of André, I supported him to configure hadoop at initial in a docker container. We implemented the access to the haddop system in the \textit{repo-ms}, currently this facade supports all file and folder operations and offers these to the other microservices.
 
 \subsection{Database}
-The second persistent layer, next to Hadoop, is a Fuseki server. Apache Jena Fuseki is a SPARQL server, in our case its setup in a docker container. It uses a TDB and provides a REST interface for updating and query the database. This was the main task of Suganya and Sepide in the first semester. They implemented the database microservice as a facade. The provide a simplified access to the database and ensure that other systems are informed about changes centrally. I support the two in programming the microservice.
+The second persistent component, next to Hadoop, is a Fuseki server. Apache Jena Fuseki is a SPARQL server, in our case its setup in a docker container. It uses a TDB and provides a REST interface for updating and query the database. This was the main task of Suganya and Sepide in the first semester. They implemented the \textit{database-ms} as a facade, to provide a simplified access to the database and ensure that other systems are informed about changes centrally. I support the two in programming the microservice.
+
+\subsection{Workflow}
+To give the user the flexibility to decide how to handle his task. We give him the opportunity to create workflows on the UI. Workflows consist of operators and links. An operator can be a file, an extractor or a target graph. And the user is able to create a dataflow with links. 
 
 \subsection{Executer}
-Executer, simple workflows, complex workflows\\
-
-\subsection{Extractors}
-REST zu FOX\\
+The executer is the central unit for working with workflows. In the first semester André and I implemented the first version of the \textit{executer-ms}. We were able to execute the passed workflows from the UI. In this first restricted version we execute simple workflows with one file, one extractor and one target graph. In the second semester we implemented the support for more complex workflows, with multiple files or extractors. The executer creates automatically threads for every operator in the workflow, so that a parallel execution is possible.
 
 \subsection{User interface}
-on the UI, we rely on popular technologies such as JQuery and Bootstrap\\
-JQuery plugins where possible\\
-chat integration\\
-data vizialization\\
+The \textit{webclient} microservice provides simple HTML files and on the client side we rely on popular technologies such as JQuery and Bootstrap.  We implemented JQuery plugins, to keep the source code as clear as possible. In the first semester I already created the almost finished UI. The user was able to create workflows, upload files, manage the content of the hadoop system and could see the status of each microservice. Later, we only expanded the UI. We integrated the chatbot, were able to visualize a selected target graph and extended the creation of the workflows.
 
 \subsection{Logging}
 To implement a centralized logging solution we setup the ELK stack. Consist of Elasticsearch, Logstash, and Kibana. All three are delivered in preconfigured docker containers. Elasticsearch is a search engine. Logstash is a server‑side pipeline that collects the log data from the sources and sends it to Elasticsearch. Kibana visualize the data from Elasticsearch. Each microservices writes its log into a special directory, from which Logstash retrieves the logs. This was the main task of Suganya and Sepide in the second semester and I supported them in the configuration of the docker containers and the implementation of the changes in the microservices.
 
 \subsection{Continuous deployment}
-Docker, deployment. spring-boot default docker builder\\
+Responsibilities changed shortly before the end of the project group. We developed the ability to install each microservices with one command in a Docker image. In the CI these should then be pushed and later pulled on the staging machine. We implement build profiles and more flexible configuration files. Before we could finish the task, the responsibilities changed again. But our work served as preparation for the other group.

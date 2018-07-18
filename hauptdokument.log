@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.9)  14 JUL 2018 04:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.9)  18 JUL 2018 10:12
 entering extended mode
 **./hauptdokument.tex
 (hauptdokument.tex
@@ -167,33 +167,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
 
 ) [2
 
-] (sections/technicalDescription.tex) [3
+] (sections/technicalDescription.tex [3
 
-] (sections/evaluation.tex)
-[4
+]) [4] (sections/learnedSkills.tex)
+(sections/selfEvaluation.tex) [5
 
-] (sections/learnedSkills.tex) [5
-
-] (sections/selfEvaluation.tex) [6
-
-]
-(hauptdokument.aux) ) 
+] (hauptdokument.aux) ) 
 Here is how much of TeX's memory you used:
- 679 strings out of 492973
- 8767 string characters out of 3127136
- 72777 words of memory out of 3000000
- 4596 multiletter control sequences out of 15000+200000
- 5316 words of font info for 20 fonts, out of 3000000 for 9000
+ 680 strings out of 492973
+ 8715 string characters out of 3127136
+ 75777 words of memory out of 3000000
+ 4598 multiletter control sequences out of 15000+200000
+ 5970 words of font info for 22 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,4n,21p,519b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/User/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on hauptdokument.pdf (6 pages, 61941 bytes).
+ 29i,4n,21p,896b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/U
+ser/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
+><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmtt9.pfb>
+Output written on hauptdokument.pdf (5 pages, 98000 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
+ 42 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
